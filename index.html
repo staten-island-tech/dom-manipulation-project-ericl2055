@@ -3,23 +3,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <p1> Song Name:</p1>
-    <input type="text" id="songname" />
+    <div class="parent">
+      <div class="text">
+        <p1> Song Name:</p1>
+        <input type="text" id="songname" />
 
-    <p1 class="artist"> Artist Name:</p1>
-    <input type="text" id="artistname" />
+        <p1 class="artist"> Artist Name:</p1>
+        <input type="text" id="artistname" />
 
-    <p1 class="imagelink"> Image Link:</p1>
-    <input type="text" id="imglink" />
-
-    <button type="button" id="btn">Click Me</button>
-
-    <p id="text">1</p>
-    <p id="text2">2</p>
+        <p1 class="imagelink"> Image Link:</p1>
+        <input type="text" id="imglink" />
+      </div>
+      <div class="buttons">
+        <button type="button" id="btn">Click Me</button>
+        <button type="button" id="btn2">Reset</button>
+      </div>
+      <div class="output">
+        <img />
+        <p id="text"></p>
+        <p id="text2"></p>
+      </div>
+    </div>
 
     <script src="index.js"></script>
   </body>
