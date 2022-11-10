@@ -1,9 +1,14 @@
+.parent {
+  text-align: center;
+  padding: 10px;
+}
 .text {
-    display: flexbox;
-padding: 30px;
+  font-size: 20px;
+}
+.buttons {
+  padding: 10px;
 }
 
 button:hover {
-    transform: scale(1.2);
-  }
-
+  transform: scale(1.2);
+}
