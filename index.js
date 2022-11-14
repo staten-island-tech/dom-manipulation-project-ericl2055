@@ -4,9 +4,9 @@ const DOMSelectors = {
   input: document.querySelector("#songname"),
   input2: document.querySelector("#artistname"),
   input3: document.querySelector("#imglink"),
-  a: document.querySelector("img"),
+  output: document.getElementById("output"),
 };
-
+console.log(DOMSelectors.output);
 function removeParent(a) {
   a.remove();
 }
@@ -15,24 +15,24 @@ DOMSelectors.button.addEventListener("click", function () {
   let input2 = DOMSelectors.input2.value;
   let input3 = DOMSelectors.input3.value;
   if (input === "") {
-    DOMSelectors.box.insertAdjacentHTML(
+    DOMSelectors.output.insertAdjacentHTML(
       "beforeend",
-      `<p> No Movie Title  -  <button onclick="removeParent(this.parentNode)">Done</button</p>`
+      `<div id = "center"><p> No Movie Title</p>   <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
     );
   } else if (input2 === "") {
-    DOMSelectors.box.insertAdjacentHTML(
+    DOMSelectors.output.insertAdjacentHTML(
       "beforeend",
-      `<p> No Cast  -  <button onclick="removeParent(this.parentNode)">Done</button</p>`
+      `<div id = "center"><p> No Cast </p> <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
     );
   } else if (input3 === "") {
-    DOMSelectors.box.insertAdjacentHTML(
+    DOMSelectors.output.insertAdjacentHTML(
       "beforeend",
-      `<p> No Image  -  <button onclick="removeParent(this.parentNode)">Done</button</p>`
+      `<div id = "center"><p> No Image </p>  <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
     );
   } else {
-    DOMSelectors.box.insertAdjacentHTML(
+    DOMSelectors.output.insertAdjacentHTML(
       "beforeend",
-      `<p>  ${input} ${input2} <img src  = ${input3}>  -  <button onclick="removeParent(this.parentNode)">Finished</button </p>`
+      `<div id = "true" ><p>  <h1>${input}</h1> <h2>${input2}</h2> <img src  = ${input3}> </p>   <button id = "red" onclick="removeParent(this.parentNode)">Delete</button</div> `
     );
     DOMSelectors.input.value = "";
     DOMSelectors.input2.value = "";
