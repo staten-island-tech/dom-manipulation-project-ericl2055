@@ -6,36 +6,35 @@ const DOMSelectors = {
   input3: document.querySelector("#imglink"),
   output: document.getElementById("output"),
 };
-console.log(DOMSelectors.output);
-function removeParent(a) {
-  a.remove();
+
+function clearinput() {
+  DOMSelectors.input.value = "";
+  DOMSelectors.input2.value = "";
+  DOMSelectors.input3.value = "";
 }
+function remove() {
+  center = document.querySelectorAll("#center");
+  center.forEach((button) => {
+    button.addEventListener("click", function () {
+      this.parentElement.remove();
+    });
+  });
+}
+function create(container) {
+  let input = DOMSelectors.input.value;
+  let input2 = DOMSelectors.input2.value;
+  let input3 = DOMSelectors.input3.value;
+  container.insertAdjacentHTML(
+    "beforeend",
+    `<div id = "center"> <p> <h1>${input}</h1> <h2>${input2}</h2> <img src  = ${input3}></p> <button id = "red">Done</button></div>`
+  );
+}
+
 DOMSelectors.button.addEventListener("click", function () {
   let input = DOMSelectors.input.value;
   let input2 = DOMSelectors.input2.value;
   let input3 = DOMSelectors.input3.value;
-  if (input === "") {
-    DOMSelectors.output.insertAdjacentHTML(
-      "beforeend",
-      `<div id = "center"><p> No Movie Title</p>   <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
-    );
-  } else if (input2 === "") {
-    DOMSelectors.output.insertAdjacentHTML(
-      "beforeend",
-      `<div id = "center"><p> No Cast </p> <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
-    );
-  } else if (input3 === "") {
-    DOMSelectors.output.insertAdjacentHTML(
-      "beforeend",
-      `<div id = "center"><p> No Image </p>  <button id = "red" onclick="removeParent(this.parentNode)">Done</button</div>`
-    );
-  } else {
-    DOMSelectors.output.insertAdjacentHTML(
-      "beforeend",
-      `<div id = "true" ><p>  <h1>${input}</h1> <h2>${input2}</h2> <img src  = ${input3}> </p>   <button id = "red" onclick="removeParent(this.parentNode)">Delete</button</div> `
-    );
-    DOMSelectors.input.value = "";
-    DOMSelectors.input2.value = "";
-    DOMSelectors.input3.value = "";
-  }
+  create(DOMSelectors.output, input, input2, input3);
+  clearinput();
+  remove();
 });
