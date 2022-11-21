@@ -15,8 +15,8 @@ function clearinput() {
 function remove() {
   center = document.querySelectorAll("#center");
   center.forEach((button) => {
-    button.addEventListener("click", function () {
-      this.parentElement.remove();
+    button.addEventListener("click", (event) => {
+      event.target.parentElement.remove();
     });
   });
 }
